@@ -172,7 +172,7 @@ body{
         "feat3 feat4 shape";
     padding-top: 30px;
     width: 100%;
-    margin: 0 auto;
+    margin-left: 120px;
     gap: 50px;
 }
 .services .container .services.container div i{
@@ -204,14 +204,69 @@ body{
     position: relative;
     width: 100%;
     height: 300px;
-    margin: 50px;
+    margin: 10px 80px;
 }
 .special-heading{
     font-size: 150px;
     color: #f6f6f6;
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.text p{
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.7;
+    color: #777;
+    font-size: 17px;
+}
+.services .feat p{
+    line-height: 1.7;
+    color: #777;
+    font-size: 17px;
+}
 /* end services */
+
+/* start portfolio */
+.portfolio{
+    position: relative;
+    background-color: #fafafa;
+}
+.portfolio .container{
+    margin: 100px;
+}
+.portfolio .container .text .special-heading{
+    color: #ebeced;
+    top: 10%;
+}
+.portfolio .container .text{
+    width: 100%;
+    height: 200px   ;
+}
+.portfolio .container .text p{
+    top: 24%;
+}
+.portfolio .container .portfolio{
+    display: flex;
+    justify-content: space-evenly;
+}
+.portfolio .container .portfolio img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 0;
+}
+.portfolio .container .feat{
+    padding: 20px;
+}
+.portfolio .container .feat .text-feat{
+    background-color: #ffffff;
+    padding: 30px;
+}
+.portfolio .container .feat .text-feat h3{
+    margin: 0;
+}
+/* end portfolio */
