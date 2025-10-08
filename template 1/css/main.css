@@ -110,7 +110,7 @@ body{
     transition: 0.3s all;
 }
 .header .container .links ul{
-    background-color: #f6f6f6;
+    background-color: var(--section-color);
     width: 200px;
     position: absolute;
     right: 0;
@@ -123,7 +123,7 @@ body{
     content: '';
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent #f6f6f6 transparent;
+    border-color: transparent transparent var(--section-color) transparent;
     position: absolute;
     top: -18px;
     right: 5px;
@@ -185,7 +185,7 @@ body{
     font-size: 50px;
 }
 .features .container .feat p{
-    line-height: 1.7;
+    line-height: var(--line-height);
     color: #777;
     font-size: 17px;
 }
@@ -226,7 +226,7 @@ body{
     }
 }
 .services p{
-    line-height: 1.6;
+    line-height: var(--line-height);
     font-weight: 300;
     color: #444;
 }
@@ -235,6 +235,7 @@ body{
     position: absolute;
     top: -50px;
     border-radius: 20px;
+    z-index: 2;
 }
 .services .col:last-child div::after{
     content: '';
@@ -244,7 +245,7 @@ body{
     position: absolute;
     top: -115px;
     right: -80px;
-    z-index: -1;
+    z-index: 1;
     border-radius: 10px;
 }
 /* end services */
@@ -252,7 +253,8 @@ body{
 /* start portfolio */
 .portfolio{
     margin-top: 100px;
-    background-color: #f6f6f6;
+    background-color: var(--section-color);
+    padding: 10px;
 }
 .portfolio .container{
     margin: 0 auto;
@@ -262,7 +264,9 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 50px;
 }
-
+.portfolio .portfolio-content .card{
+    padding-bottom: 80px;
+}
 .portfolio .portfolio-content img{
     width: 100%;
 }
@@ -285,3 +289,85 @@ body{
 }
 /* end portfolio */
 
+/* start about */
+.about .container{
+    padding-bottom: 150px;
+}
+.about .container{
+    margin: 0 auto;
+}
+.about .container .about-content div{
+    padding: 20px;
+}
+.about .image{
+    width: 400px;
+    position: relative;
+}
+.about .image img{
+    width: 100%;
+    border-radius: 10px;
+    height: 550px;
+}
+.about .image::after{
+    content: '';
+    width: 100px;
+    height: 450px;
+    border-left: var(--main-color) 80px solid;
+    border-bottom: var(--main-color) 80px solid;
+    position: absolute;
+    top: -15px;
+    right: -125px;
+    z-index: -1;
+}
+.about .image::before{
+    content: '';
+    width: 100px;
+    height: 650px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #f8f3f3;
+    top: -50px;
+    left: -30px;  
+    z-index: -1;
+}
+.about-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.about-container .text{
+  flex: 1;
+  margin-left: 150px;
+}
+.about hr{
+    border-color: var(--main-color);
+    width: 50%;
+    margin-left: 0;
+}
+.about .container .about-container .text p:first-child{
+    font-weight: bold;
+    margin-bottom: 100px;
+    padding-top: 60px;
+    line-height: 2;
+}
+.about .container .about-container .text p:last-child{
+    color: #777;
+    line-height: 2;
+}
+
+/* .about .container .about-container .text p:first-child::after{
+    content: '';
+    display: block;
+    background-color: var(--main-color);
+    color: var(--main-color);
+    width: 200px;
+    height: 2px;
+} */
+
+/* end about */
+
+/* start contact */
+.container{
+    margin: 0 auto;
+}
+/* end contact */
