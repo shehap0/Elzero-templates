@@ -6,11 +6,13 @@ body{
 }
 :root{
     --main-color: #10cab7;
+    --section-color: #f6f6f6;
+    --line-height: 1.6;
 }
 
 /* start components */
 .special-heading{
-    color: #f6f6f6;
+    color: #ebeced;
     text-align: center;
     font-weight:800;
     font-size: 130px;
@@ -245,9 +247,41 @@ body{
     z-index: -1;
     border-radius: 10px;
 }
-
 /* end services */
 
 /* start portfolio */
+.portfolio{
+    margin-top: 100px;
+    background-color: #f6f6f6;
+}
+.portfolio .container{
+    margin: 0 auto;
+}
+.portfolio .portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 50px;
+}
 
+.portfolio .portfolio-content img{
+    width: 100%;
+}
+.portfolio .text{
+    padding: 20px;
+    background-color: white;
+    margin: 0;
+} 
+.portfolio .text h3{
+    margin: 0;
+}
+.portfolio .text p{
+    line-height: var(--line-height);
+    color: #777;
+}
+@media (max-width:1200px){
+    .portfolio .text{
+        text-align: center;
+    }
+}
 /* end portfolio */
+
