@@ -29,6 +29,7 @@ The goal of this repo is to improve my **HTML & CSS** skills by recreating diffe
 ## 🌐 Live Preview
 You can review my site here:  
 👉 [Elzero Templates 1 – Live Demo](https://shehap0.github.io/Elzero-templates/template%201/index.html)
+👉 [Elzero Templates 2 – Live Demo](https://shehap0.github.io/Elzero-templates/template%202/index.html)
 
 ---
 
