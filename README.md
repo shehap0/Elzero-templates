@@ -23,6 +23,7 @@ The goal of this repo is to improve my **HTML & CSS** skills by recreating diffe
 ## 🛠️ Tools Used
 - **HTML**
 - **CSS**
+- **JS**
 
 ---
 
@@ -32,8 +33,10 @@ You can review my site here:
 
 👉 [Elzero Templates 2 – Live Demo](https://shehap0.github.io/Elzero-templates/template%202/index.html)
 
+👉 [Elzero Templates 3 – Live Demo](https://shehap0.github.io/Elzero-templates/template%203/index.html)
+
 ---
 
 ## 📌 Notes
 This repo is only for **practice and learning purposes**.  
-All designs belong to **Elzero Web School**, I’m just recreating them to improve my skills.
+All designs belong to **Elzero Web School**, I’m just recreating them to improve my skills, some of the template are different from the original one because my creativity sometimes takes over.

@@ -1,0 +1,52 @@
+.gallery{
+    background-color: var(--secondary-bg);
+}
+.gallery .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 28px;
+}
+.gallery .box{
+    background-color: var(--main-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 14px;
+    box-shadow: inset 0 0 0 1px rgba(197, 160, 89, 0.08), 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+.gallery .image{
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 1 / 1;
+}
+.gallery .image::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(197, 160, 89, 0.22), transparent 45%, rgba(139, 0, 0, 0.22));
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+.gallery .image img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease, filter 0.45s ease;
+    filter: sepia(0.12) saturate(0.86);
+}
+.gallery .box:hover .image::before{
+    opacity: 1;
+}
+.gallery .box:hover img{
+    transform: scale(1.08) rotate(2deg);
+    filter: sepia(0.2) saturate(1.02) brightness(1.05);
+}
+.gallery span{
+    display: block;
+    margin-top: 14px;
+    color: var(--accent-gold);
+    font-weight: 700;
+    text-align: center;
+}

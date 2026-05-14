@@ -1,0 +1,72 @@
+.services{
+    background:
+        linear-gradient(180deg, rgba(26, 23, 20, 0.98), rgba(26, 23, 20, 1)),
+        repeating-linear-gradient(45deg, rgba(197, 160, 89, 0.05) 0 1px, transparent 1px 18px);
+}
+.services .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+.services .box{
+    position: relative;
+    counter-increment: service;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.26);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.services .box::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 4px;
+    width: 0;
+    background-color: var(--accent-gold);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+.services .box:hover{
+    transform: translateY(-8px);
+    border-color: var(--accent-gold);
+}
+.services .box:hover::before{
+    width: 100%;
+}
+.services .box > i{
+    margin: 36px 0 20px;
+    color: var(--accent-gold);
+    font-size: 44px;
+}
+.services .box h3{
+    margin: 0 12px 32px;
+    color: var(--text-main);
+    font-size: 22px;
+}
+.services .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(26, 23, 20, 0.72);
+    border-top: 1px solid var(--border-color);
+}
+.services .info span{
+    min-width: 86px;
+    padding: 12px 18px;
+    color: var(--main-bg);
+    background-color: var(--accent-gold);
+    font-size: 26px;
+    font-weight: 900;
+}
+.services .info a{
+    color: var(--accent-gold);
+    font-weight: 800;
+    padding: 0 18px;
+}
+.services .box:hover .info a{
+    color: var(--accent-hover);
+}

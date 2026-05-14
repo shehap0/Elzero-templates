@@ -1,0 +1,90 @@
+.features{
+    background:
+        linear-gradient(180deg, rgba(26, 23, 20, 1), rgba(26, 23, 20, 0.96)),
+        radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.22), transparent 28%);
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+.features .box{
+    position: relative;
+    overflow: hidden;
+    padding: 34px 28px;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+}
+.features .box::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-top: 5px solid var(--accent-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+.features .box:hover::before{
+    transform: scaleX(1);
+}
+.features .icon{
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(197, 160, 89, 0.1);
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    color: var(--accent-gold);
+    font-size: 34px;
+}
+.features .box h3{
+    margin: 0 auto 18px;
+    width: fit-content;
+    color: var(--text-main);
+    font-size: 25px;
+    position: relative;
+}
+.features .box h3::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -9px;
+    width: 70%;
+    height: 3px;
+    background-color: var(--accent-gold);
+    transform: translateX(-50%);
+}
+.features .box p{
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin: 0 0 28px;
+}
+.features .box a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 0 20px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 4px;
+    color: var(--accent-gold);
+    font-weight: 800;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.features .box:hover a{
+    background-color: var(--accent-gold);
+    color: var(--main-bg);
+}
+.features .ember .icon{
+    color: var(--accent-hover);
+    border-color: rgba(227, 192, 126, 0.45);
+}
+.features .scribe .icon{
+    color: var(--text-main);
+}

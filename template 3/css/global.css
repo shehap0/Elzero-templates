@@ -1,0 +1,181 @@
+/* global styles */
+*{
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root{
+    --main-bg: #1a1714;        /* Deep Charcoal/Stone (Main Background) */
+    --secondary-bg: #2d2822;   /* Lighter Stone/Wood (Card Backgrounds) */
+    --accent-gold: #c5a059;    /* Burnished Gold (Buttons/Icons/Links) */
+    --accent-hover: #e3c07e;   /* Bright Gold (Hover states) */
+    --text-main: #e5e1d8;      /* Aged Parchment (Main Text) */
+    --text-dim: #a39e93;       /* Faded Text (Secondary Text) */
+    --blood-red: #8b0000;      /* For special alerts or "Danger" buttons */
+    --border-color: #4a4238;
+
+    --main-transition: all 0.3s ease;
+    --title-font: "Cinzel", serif;
+    --body-font: "Open Sans", sans-serif;
+}
+/* Aliases used by the original template, mapped to medieval palette */
+:root{
+    --main-color: var(--accent-gold);
+    --main-color-light: var(--accent-hover);
+    --main-color-dark-light: var(--secondary-bg);
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: var(--title-font);
+    background-color: var(--main-bg);
+    color: var(--text-main);
+}
+p{
+    font-family: var(--body-font);
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.main-title{
+    font-size: 36px;
+    margin: 40px auto;
+    text-align: center;
+    color: var(--accent-gold);
+    border: 2px solid var(--accent-gold);
+    width: fit-content;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+}
+.section{
+    padding: 90px 0;
+    position: relative;
+    scroll-margin-top: 90px;
+}
+.section-lead{
+    width: min(720px, calc(100% - 30px));
+    margin: -15px auto 45px;
+    color: var(--text-dim);
+    text-align: center;
+    line-height: 1.8;
+    font-size: 17px;
+}
+.reveal{
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 600ms ease, transform 600ms ease;
+}
+.reveal.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+    .reveal{
+        opacity: 1;
+        transform: none;
+    }
+}
+.main-title::before,
+.main-title::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-color);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.main-title::before {
+  left: -30px;
+}
+.main-title::after {
+  right: -30px;
+}
+.main-title:hover::before {
+  z-index: -1;
+  animation: left-move 0.5s linear forwards;
+}
+.main-title:hover::after {
+  z-index: -1;
+  animation: right-move 0.5s linear forwards;
+}
+.main-title:hover {
+  color: white;
+  border: 2px solid transparent;
+  transition-delay: 0.5s;
+}
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container { width: 540px; }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container { width: 720px; }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container { width: 960px; }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container { width: 1140px; }
+}
+/* Extra extra large devices (Large 4k screens, 1400px and up) */
+@media (min-width: 1400px) {
+  .container { width: 1320px; }
+}
+/* global styles */
