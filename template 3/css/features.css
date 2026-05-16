@@ -5,7 +5,8 @@
 }
 .features .container{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    justify-content: center;
     gap: 30px;
 }
 .features .box{
@@ -17,6 +18,13 @@
     border-radius: 6px;
     text-align: center;
     box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .features .box:last-child:nth-child(odd){
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: min(100%, 360px);
+    }
 }
 .features .box::before{
     content: "";
