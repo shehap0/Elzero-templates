@@ -35,6 +35,8 @@ You can review my site here:
 
 👉 [Elzero Templates 3 – Live Demo](https://shehap0.github.io/Elzero-templates/template%203/index.html)
 
+👉 there are no demo for temple 3 vibecoded but can be see it locally if u cloned the repo and cd it vibecoded folder then run "npm run build" then "npm run dev"
+
 ---
 
 ## 📌 Notes
