@@ -1,0 +1,121 @@
+<section class="subscribe" id="subscribe">
+  <div class="container subscribe__inner" data-reveal>
+    <form class="subscribe__form">
+      <i class="fa-solid fa-envelope"></i>
+      <input type="email" placeholder="Your Email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p>
+      Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+      Mauris blandit aliquet elit, eget tincidunt.
+    </p>
+  </div>
+</section>
+
+<style>
+  .subscribe {
+    padding: var(--space-xl) 0;
+    background-image: url('/img/and i wondered.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .subscribe::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: oklch(0 0 0 / 0.55);
+  }
+
+  .subscribe__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    color: oklch(1 0 0 / 0.95);
+  }
+
+  .subscribe__form {
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .subscribe__form i {
+    position: absolute;
+    top: 50%;
+    left: var(--space-md);
+    transform: translateY(-50%);
+    font-size: var(--font-size-xl);
+    color: oklch(1 0 0 / 0.7);
+    z-index: 2;
+  }
+
+  .subscribe__form input {
+    flex: 1;
+    padding: var(--space-md);
+    padding-left: var(--space-xl);
+    background: transparent;
+    border: 1px solid oklch(1 0 0 / 0.5);
+    border-right: none;
+    color: oklch(1 0 0 / 0.95);
+    font-size: var(--font-size-base);
+  }
+
+  .subscribe__form input::placeholder {
+    color: oklch(1 0 0 / 0.5);
+  }
+
+  .subscribe__form input:focus {
+    outline: none;
+    border-color: var(--color-brand);
+  }
+
+  .subscribe__form button {
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-brand);
+    color: var(--color-elevated);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-size: var(--font-size-sm);
+    border: 1px solid var(--color-brand);
+    transition: background var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .subscribe__form button:hover {
+    background: var(--color-brand-dark);
+  }
+
+  .subscribe__inner p {
+    font-size: var(--font-size-base);
+    line-height: var(--leading-loose);
+    color: oklch(1 0 0 / 0.8);
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 868px) {
+    .subscribe__inner {
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .subscribe__form {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .subscribe__form {
+      flex-direction: column;
+    }
+    .subscribe__form input {
+      border-right: 1px solid oklch(1 0 0 / 0.5);
+      border-bottom: none;
+    }
+  }
+</style>

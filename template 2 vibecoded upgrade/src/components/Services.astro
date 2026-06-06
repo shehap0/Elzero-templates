@@ -1,0 +1,124 @@
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section__heading" data-reveal>
+      <h2>Services</h2>
+      <div class="heading-separator">
+        <span class="dot"></span>
+      </div>
+      <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+    </div>
+
+    <div class="services__grid">
+      <div class="services__item services__item--featured" data-reveal data-reveal-delay="0">
+        <div class="services__icon">
+          <i class="fa-solid fa-desktop"></i>
+        </div>
+        <div class="services__text">
+          <h3>Vorem Amet Intuitive</h3>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit.</p>
+        </div>
+      </div>
+
+      <div class="services__item services__item--featured" data-reveal data-reveal-delay="100">
+        <div class="services__icon">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="services__text">
+          <h3>Vorem Amet Intuitive</h3>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit.</p>
+        </div>
+      </div>
+
+      <div class="services__item" data-reveal data-reveal-delay="200">
+        <div class="services__icon">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div class="services__text">
+          <h3>Vorem Amet Intuitive</h3>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+        </div>
+      </div>
+
+      <div class="services__item" data-reveal data-reveal-delay="300">
+        <div class="services__icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="services__text">
+          <h3>Vorem Amet Intuitive</h3>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background: var(--color-surface);
+  }
+
+  .services__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .services__item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    transition: background var(--duration-normal) var(--ease-out-expo);
+  }
+
+  .services__item:hover {
+    background: var(--color-surface-alt);
+  }
+
+  .services__item--featured .services__icon i {
+    font-size: 3rem;
+    color: var(--color-brand);
+  }
+
+  .services__item .services__icon i {
+    font-size: 2.25rem;
+    color: var(--color-brand-light);
+  }
+
+  .services__icon {
+    flex-shrink: 0;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .services__text h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-brand);
+    margin-bottom: var(--space-sm);
+  }
+
+  .services__text p {
+    font-size: var(--font-size-base);
+    color: var(--color-ink-muted);
+    line-height: var(--leading-loose);
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 868px) {
+    .services__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    .services__item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .services__icon {
+      margin-bottom: var(--space-sm);
+    }
+  }
+</style>

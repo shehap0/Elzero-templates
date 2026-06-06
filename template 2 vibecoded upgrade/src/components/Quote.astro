@@ -1,0 +1,60 @@
+<section class="quote-section" id="quote">
+  <div class="container quote-section__content" data-reveal>
+    <blockquote>
+      "Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt."
+    </blockquote>
+    <cite>John Doe</cite>
+  </div>
+</section>
+
+<style>
+  .quote-section {
+    position: relative;
+    background-image: url('/img/jap.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: var(--space-3xl) 0;
+    text-align: center;
+  }
+
+  .quote-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: oklch(0 0 0 / 0.7);
+  }
+
+  .quote-section__content {
+    position: relative;
+    z-index: 2;
+    color: oklch(1 0 0 / 0.95);
+  }
+
+  .quote-section blockquote {
+    font-size: var(--font-size-3xl);
+    font-weight: 500;
+    line-height: var(--leading-normal);
+    margin-bottom: var(--space-md);
+    text-wrap: balance;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .quote-section cite {
+    font-size: var(--font-size-lg);
+    font-style: normal;
+    font-weight: 600;
+    color: oklch(1 0 0 / 0.7);
+  }
+
+  @media (max-width: 768px) {
+    .quote-section {
+      background-attachment: scroll;
+    }
+    .quote-section blockquote {
+      font-size: var(--font-size-2xl);
+    }
+  }
+</style>

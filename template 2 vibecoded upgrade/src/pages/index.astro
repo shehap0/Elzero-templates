@@ -1,0 +1,46 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Header from '~/components/Header.astro';
+import Hero from '~/components/Hero.astro';
+import Services from '~/components/Services.astro';
+import Design from '~/components/Design.astro';
+import Portfolio from '~/components/Portfolio.astro';
+import VideoSection from '~/components/VideoSection.astro';
+import About from '~/components/About.astro';
+import Stats from '~/components/Stats.astro';
+import ReviewSkills from '~/components/ReviewSkills.astro';
+import Quote from '~/components/Quote.astro';
+import Pricing from '~/components/Pricing.astro';
+import Subscribe from '~/components/Subscribe.astro';
+import Contact from '~/components/Contact.astro';
+import Footer from '~/components/Footer.astro';
+---
+
+<BaseLayout title="Kasper — We Make Art">
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+    <Design />
+    <Portfolio />
+    <VideoSection />
+    <About />
+    <Stats />
+    <ReviewSkills />
+    <Quote />
+    <Pricing />
+    <Subscribe />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  import('~/scripts/animations.js').then(mod => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => mod.initAnimations());
+    } else {
+      mod.initAnimations();
+    }
+  });
+</script>

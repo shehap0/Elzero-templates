@@ -1,0 +1,125 @@
+<section class="design" id="design">
+  <div class="design__image" data-reveal>
+    <img src="/img/mobile.png" alt="Kasper app on mobile device" />
+  </div>
+  <div class="design__text" data-reveal>
+    <h2>Our Designs Come With...</h2>
+    <ul>
+      <li>
+        <i class="fa-solid fa-display"></i>
+        Responsive Design
+      </li>
+      <li>
+        <i class="fa-solid fa-pen-ruler"></i>
+        Modern & Clean
+      </li>
+      <li>
+        <i class="fa-solid fa-code"></i>
+        Clean Code
+      </li>
+      <li>
+        <i class="fa-solid fa-globe"></i>
+        Browser Friendly
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .design {
+    position: relative;
+    background-image: url('/img/design-features.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .design::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: oklch(0 0 0 / 0.55);
+    z-index: 1;
+  }
+
+  .design__image {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    margin-bottom: -80px;
+  }
+
+  .design__image img {
+    max-height: 500px;
+    width: auto;
+    filter: drop-shadow(0 20px 40px oklch(0 0 0 / 0.3));
+  }
+
+  .design__text {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 45%;
+    background: var(--color-brand-translucent);
+    backdrop-filter: blur(4px);
+    padding: var(--space-xl) var(--space-lg);
+    color: oklch(1 0 0 / 0.95);
+  }
+
+  .design__text h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-lg);
+  }
+
+  .design__text ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .design__text ul li {
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-weight: 500;
+  }
+
+  .design__text ul li i {
+    font-size: var(--font-size-2xl);
+    width: 2rem;
+    color: var(--color-brand-light);
+  }
+
+  @media (max-width: 868px) {
+    .design {
+      flex-direction: column;
+      background-attachment: scroll;
+    }
+    .design__image {
+      flex: none;
+      margin-bottom: 0;
+      padding: var(--space-lg) 0 0;
+    }
+    .design__image img {
+      max-height: 350px;
+    }
+    .design__text {
+      flex: none;
+      width: 100%;
+      padding: var(--space-lg) var(--space-md);
+    }
+    .design__text h2 {
+      font-size: var(--font-size-2xl);
+    }
+  }
+</style>

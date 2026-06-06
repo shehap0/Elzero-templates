@@ -1,0 +1,95 @@
+<section class="stats" id="stats">
+  <div class="stats__bg"></div>
+  <div class="container stats__grid">
+    <div class="stats__item" data-reveal data-reveal-delay="0">
+      <i class="fa-solid fa-mug-saucer"></i>
+      <span class="stats__number" data-target="1236">0</span>
+      <p>Coffee Drinks</p>
+    </div>
+    <div class="stats__item" data-reveal data-reveal-delay="100">
+      <i class="fa-solid fa-file"></i>
+      <span class="stats__number" data-target="256">0</span>
+      <p>Completed Projects</p>
+    </div>
+    <div class="stats__item" data-reveal data-reveal-delay="200">
+      <i class="fa-solid fa-envelope"></i>
+      <span class="stats__number" data-target="1743">0</span>
+      <p>Mail Sent</p>
+    </div>
+    <div class="stats__item" data-reveal data-reveal-delay="300">
+      <i class="fa-solid fa-trophy"></i>
+      <span class="stats__number" data-target="17">0</span>
+      <p>Awards Received</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats {
+    position: relative;
+    background-image: url('/img/stats.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: var(--space-3xl) 0;
+  }
+
+  .stats__bg {
+    position: absolute;
+    inset: 0;
+    background: oklch(0 0 0 / 0.6);
+    z-index: 1;
+  }
+
+  .stats__grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    background: var(--color-brand-translucent);
+    backdrop-filter: blur(4px);
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .stats__item {
+    text-align: center;
+    color: oklch(1 0 0 / 0.95);
+    padding: var(--space-md);
+  }
+
+  .stats__item i {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-md);
+    display: block;
+  }
+
+  .stats__number {
+    font-size: var(--font-size-5xl);
+    font-weight: 800;
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .stats__item p {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    text-transform: capitalize;
+    color: oklch(1 0 0 / 0.75);
+  }
+
+  @media (max-width: 868px) {
+    .stats__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .stats__grid {
+      grid-template-columns: 1fr;
+    }
+    .stats {
+      background-attachment: scroll;
+    }
+  }
+</style>

@@ -1,0 +1,227 @@
+<section class="section review" id="review">
+  <div class="container review__grid">
+    <div class="review__column" data-reveal data-reveal-delay="0">
+      <div class="review__heading">
+        <h3>Testimonials</h3>
+        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+      </div>
+
+      <div class="review__cards">
+        <div class="review__card">
+          <img src="/img/skills-01.jpg" alt="John Doe" />
+          <div class="review__card-text">
+            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+            <span class="review__signature">John Doe, CEO</span>
+          </div>
+        </div>
+        <div class="review__card">
+          <img src="/img/skills-02.jpg" alt="Jane Doe" />
+          <div class="review__card-text">
+            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+            <span class="review__signature">Jane Doe, Designer</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="review__bullets">
+        <li></li>
+        <li class="active"></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <div class="review__column" data-reveal data-reveal-delay="100">
+      <div class="review__heading">
+        <h3>Skills</h3>
+        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+      </div>
+
+      <div class="skills__list">
+        <div class="skills__item">
+          <p>Adobe</p>
+          <div class="skills__bar">
+            <span style="width: 90%" data-progress="90%"></span>
+          </div>
+        </div>
+        <div class="skills__item">
+          <p>HTML & CSS</p>
+          <div class="skills__bar">
+            <span style="width: 85%" data-progress="85%"></span>
+          </div>
+        </div>
+        <div class="skills__item">
+          <p>JavaScript</p>
+          <div class="skills__bar">
+            <span style="width: 80%" data-progress="80%"></span>
+          </div>
+        </div>
+        <div class="skills__item">
+          <p>PHP</p>
+          <div class="skills__bar">
+            <span style="width: 90%" data-progress="90%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .review {
+    background: var(--color-surface);
+  }
+
+  .review__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .review__heading {
+    margin-bottom: var(--space-lg);
+  }
+
+  .review__heading h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-md);
+  }
+
+  .review__heading p {
+    text-align: center;
+    color: var(--color-ink-muted);
+    font-size: var(--font-size-base);
+    text-wrap: pretty;
+  }
+
+  .review__cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .review__card {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+
+  .review__card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .review__card-text {
+    border-bottom: 2px solid var(--color-ink-muted);
+    padding-bottom: var(--space-md);
+  }
+
+  .review__card-text p {
+    font-size: var(--font-size-base);
+    line-height: var(--leading-loose);
+    margin-bottom: var(--space-sm);
+    text-wrap: pretty;
+  }
+
+  .review__signature {
+    display: block;
+    text-align: right;
+    font-size: var(--font-size-sm);
+    color: var(--color-ink-muted);
+    font-weight: 500;
+  }
+
+  .review__bullets {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
+  }
+
+  .review__bullets li {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-ink);
+    border-radius: 50%;
+    transition: background var(--duration-normal) var(--ease-out-expo);
+  }
+
+  .review__bullets li.active {
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+  }
+
+  .skills__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .skills__item p {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-xs);
+  }
+
+  .skills__bar {
+    width: 100%;
+    height: 24px;
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .skills__bar span {
+    display: block;
+    height: 100%;
+    background: var(--color-brand);
+    border-radius: var(--radius-sm);
+    position: relative;
+  }
+
+  .skills__bar span::before {
+    content: attr(data-progress);
+    position: absolute;
+    right: -4px;
+    top: -36px;
+    padding: 3px 8px;
+    background: var(--color-ink);
+    color: var(--color-elevated);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transform: translateX(50%);
+  }
+
+  .skills__bar span::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -10px;
+    transform: translateX(50%);
+    border: 6px solid transparent;
+    border-top-color: var(--color-ink);
+  }
+
+  @media (max-width: 868px) {
+    .review__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+    .review__card {
+      flex-direction: column;
+      text-align: center;
+    }
+    .review__signature {
+      text-align: center;
+    }
+  }
+</style>

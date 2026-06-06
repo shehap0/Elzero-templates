@@ -1,0 +1,184 @@
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#" class="header__logo">
+      <img src="/img/logo.png" alt="Kasper" height="50" />
+    </a>
+    <button class="header__toggle" id="menuToggle" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav class="header__nav" id="mainNav">
+      <ul>
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header__search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-header);
+    padding: var(--space-sm) 0;
+    transition: background var(--duration-normal) var(--ease-out-expo),
+      backdrop-filter var(--duration-normal) var(--ease-out-expo);
+  }
+
+  .header--scrolled {
+    background: oklch(0.10 0.02 260 / 0.85);
+    backdrop-filter: blur(12px);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .header__inner::after {
+    content: '';
+    position: absolute;
+    bottom: calc(-1 * var(--space-sm));
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(1 0 0 / 0.2) 50%,
+      transparent 100%
+    );
+  }
+
+  .header__logo img {
+    height: 45px;
+    width: auto;
+  }
+
+  .header__nav ul {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .header__nav a {
+    display: block;
+    padding: var(--space-xs) var(--space-sm);
+    color: oklch(1 0 0 / 0.8);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    transition: color var(--duration-fast) var(--ease-out-expo);
+    position: relative;
+  }
+
+  .header__nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: var(--space-sm);
+    right: var(--space-sm);
+    height: 2px;
+    background: var(--color-brand);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--duration-normal) var(--ease-out-expo);
+  }
+
+  .header__nav a.active,
+  .header__nav a:hover {
+    color: var(--color-brand);
+  }
+
+  .header__nav a.active::after,
+  .header__nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .header__search {
+    color: oklch(1 0 0 / 0.8);
+    font-size: var(--font-size-xl);
+    padding-left: var(--space-md);
+    border-left: 1px solid oklch(1 0 0 / 0.2);
+    cursor: pointer;
+    transition: color var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .header__search:hover {
+    color: var(--color-brand);
+  }
+
+  .header__toggle {
+    display: none;
+    color: oklch(1 0 0 / 0.8);
+    font-size: var(--font-size-2xl);
+    padding: var(--space-xs);
+  }
+
+  @media (max-width: 868px) {
+    .header__toggle {
+      display: block;
+    }
+    .header__nav ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background: oklch(0.08 0.02 260 / 0.95);
+      backdrop-filter: blur(12px);
+      padding: var(--space-sm) 0;
+      z-index: var(--z-menu);
+    }
+    .header__nav ul.is-open {
+      display: flex;
+    }
+    .header__nav a {
+      padding: var(--space-sm) var(--space-md);
+    }
+    .header__search {
+      border: none;
+    }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('header');
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+
+  toggle?.addEventListener('click', () => {
+    nav?.querySelector('ul')?.classList.toggle('is-open');
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        header?.classList.toggle('header--scrolled', window.scrollY > 80);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  document.querySelectorAll('.header__nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      nav?.querySelector('ul')?.classList.remove('is-open');
+      document.querySelectorAll('.header__nav a').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>

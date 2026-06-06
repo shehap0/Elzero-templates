@@ -1,0 +1,153 @@
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section__heading" data-reveal>
+      <h2>Contact Us</h2>
+      <div class="heading-separator">
+        <span class="dot"></span>
+      </div>
+      <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+    </div>
+
+    <div class="contact__grid" data-reveal>
+      <form class="contact__form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact__info">
+        <div>
+          <h4>Get In Touch</h4>
+          <span class="contact__phone">+00 123.456.789</span>
+          <span class="contact__phone">+00 123.456.789</span>
+        </div>
+        <div>
+          <h4>Where We Are</h4>
+          <address>
+            Awesome Address 17<br />
+            New York, NYC<br />
+            123-4567-890<br />
+            USA
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: var(--color-surface);
+  }
+
+  .contact__grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: var(--space-xl);
+    margin-top: var(--space-lg);
+  }
+
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .contact__form input,
+  .contact__form textarea {
+    padding: var(--space-md);
+    border: 1px solid var(--color-surface-alt);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    font-size: var(--font-size-base);
+    color: var(--color-ink);
+    transition: border-color var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .contact__form input:focus,
+  .contact__form textarea:focus {
+    border-color: var(--color-brand);
+    outline: none;
+  }
+
+  .contact__form input::placeholder,
+  .contact__form textarea::placeholder {
+    color: var(--color-ink-muted);
+  }
+
+  .contact__form textarea {
+    resize: vertical;
+    min-height: 160px;
+  }
+
+  .contact__form button {
+    align-self: flex-end;
+    padding: var(--space-md) var(--space-xl);
+    background: var(--color-brand);
+    color: var(--color-elevated);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-size: var(--font-size-sm);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--duration-fast) var(--ease-out-expo),
+      transform var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .contact__form button:hover {
+    background: var(--color-brand-dark);
+    transform: translateY(-2px);
+  }
+
+  .contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .contact__info h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-md);
+  }
+
+  .contact__phone {
+    display: block;
+    color: var(--color-ink-muted);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact__info address {
+    color: var(--color-ink-muted);
+    font-style: normal;
+    line-height: var(--leading-loose);
+    font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 868px) {
+    .contact__grid {
+      grid-template-columns: 1fr;
+    }
+    .contact__info {
+      flex-direction: row;
+      justify-content: space-around;
+      text-align: center;
+    }
+    .contact__form button {
+      align-self: center;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .contact__info {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>

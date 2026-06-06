@@ -1,0 +1,93 @@
+<section class="video-section" id="video">
+  <video autoplay muted loop playsinline class="video-section__bg">
+    <source src="/img/design%20video.mp4" type="video/mp4" />
+  </video>
+  <div class="video-section__overlay"></div>
+  <div class="video-section__caption" data-reveal>
+    <h2>Super Awesome Video Here</h2>
+    <p>It's All You Need</p>
+    <a href="#" class="video-section__cta">See More</a>
+  </div>
+</section>
+
+<style>
+  .video-section {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-section__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video-section__overlay {
+    position: absolute;
+    inset: 0;
+    background: oklch(0 0 0 / 0.45);
+    z-index: 1;
+  }
+
+  .video-section__caption {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: oklch(1 0 0 / 0.95);
+    background: var(--color-brand-translucent);
+    backdrop-filter: blur(4px);
+    padding: var(--space-xl) var(--space-2xl);
+    width: 100%;
+  }
+
+  .video-section__caption h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-sm);
+    text-wrap: balance;
+  }
+
+  .video-section__caption p {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-lg);
+    font-weight: 500;
+  }
+
+  .video-section__cta {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--color-ink);
+    color: oklch(1 0 0 / 0.95);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-size: var(--font-size-sm);
+    transition: background var(--duration-fast) var(--ease-out-expo),
+      transform var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .video-section__cta:hover {
+    background: var(--color-brand);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .video-section {
+      height: 400px;
+    }
+    .video-section__caption {
+      padding: var(--space-lg) var(--space-md);
+    }
+    .video-section__caption h2 {
+      font-size: var(--font-size-2xl);
+    }
+  }
+</style>

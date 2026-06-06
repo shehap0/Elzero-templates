@@ -1,0 +1,86 @@
+<footer class="footer" id="footer">
+  <div class="container footer__inner" data-reveal>
+    <img src="/img/logo.png" alt="Kasper" class="footer__logo" />
+    <p class="footer__social-label">We Are Social</p>
+    <div class="footer__social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p class="footer__copyright">
+      &copy; 2021 <span>Kasper</span> All Right Reserved
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: var(--space-xl) 0;
+    background-image: url('/img/and i wondered.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-align: center;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: oklch(0 0 0 / 0.7);
+  }
+
+  .footer__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    color: oklch(1 0 0 / 0.9);
+  }
+
+  .footer__logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer__social-label {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid oklch(1 0 0 / 0.3);
+  }
+
+  .footer__social {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .footer__social a {
+    color: oklch(1 0 0 / 0.7);
+    font-size: var(--font-size-xl);
+    transition: color var(--duration-fast) var(--ease-out-expo),
+      transform var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .footer__social a:hover {
+    color: var(--color-brand);
+    transform: translateY(-2px);
+  }
+
+  .footer__copyright {
+    font-size: var(--font-size-base);
+    margin-top: var(--space-md);
+    color: oklch(1 0 0 / 0.6);
+  }
+
+  .footer__copyright span {
+    color: var(--color-brand);
+    font-weight: 700;
+  }
+</style>

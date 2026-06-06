@@ -1,0 +1,201 @@
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="section__heading" data-reveal>
+      <h2>Portfolio</h2>
+      <div class="heading-separator">
+        <span class="dot"></span>
+      </div>
+      <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+    </div>
+
+    <div class="portfolio__shuffle" data-reveal>
+      <ul>
+        <li class="active">All</li>
+        <li>App</li>
+        <li>Photo</li>
+        <li>Web</li>
+        <li>Print</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="portfolio__grid">
+    <div class="portfolio__item" data-reveal data-reveal-delay="0">
+      <img src="/img/images/shuffle-01.jpg" alt="Portfolio project - App design" />
+      <div class="portfolio__caption">
+        <h4>Awesome Image</h4>
+        <p>Photography</p>
+      </div>
+    </div>
+    <div class="portfolio__item" data-reveal data-reveal-delay="50">
+      <img src="/img/images/shuffle-02.jpg" alt="Portfolio project - Photo" />
+      <div class="portfolio__caption">
+        <h4>Awesome Image</h4>
+        <p>Photography</p>
+      </div>
+    </div>
+    <div class="portfolio__item" data-reveal data-reveal-delay="100">
+      <img src="/img/images/shuffle-03.jpg" alt="Portfolio project - Web" />
+      <div class="portfolio__caption">
+        <h4>Awesome Image</h4>
+        <p>Photography</p>
+      </div>
+    </div>
+    <div class="portfolio__item" data-reveal data-reveal-delay="150">
+      <img src="/img/images/shuffle-04.jpg" alt="Portfolio project - Print" />
+      <div class="portfolio__caption">
+        <h4>Awesome Image</h4>
+        <p>Photography</p>
+      </div>
+    </div>
+    <div class="portfolio__item" data-reveal data-reveal-delay="200">
+      <img src="/img/images/shuffle-05.jpg" alt="Portfolio project - Design" />
+      <div class="portfolio__caption">
+        <h4>Awesome Image</h4>
+        <p>Photography</p>
+      </div>
+    </div>
+    <div class="portfolio__item" data-reveal data-reveal-delay="250">
+      <img src="/img/images/shuffle-06.jpg" alt="Portfolio project - Branding" />
+      <div class="portfolio__caption">
+        <h4>Awesome Image</h4>
+        <p>Photography</p>
+      </div>
+    </div>
+    <div class="portfolio__item" data-reveal data-reveal-delay="300">
+      <img src="/img/images/shuffle-07.jpg" alt="Portfolio project - Illustration" />
+      <div class="portfolio__caption">
+        <h4>Awesome Image</h4>
+        <p>Photography</p>
+      </div>
+    </div>
+    <div class="portfolio__item" data-reveal data-reveal-delay="350">
+      <img src="/img/images/shuffle-08.jpg" alt="Portfolio project - Motion" />
+      <div class="portfolio__caption">
+        <h4>Awesome Image</h4>
+        <p>Photography</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" data-reveal>
+    <a href="#" class="portfolio__more">More</a>
+  </div>
+</section>
+
+<style>
+  .portfolio {
+    background: var(--color-surface-alt);
+  }
+
+  .portfolio__shuffle ul {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+  }
+
+  .portfolio__shuffle ul li {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all var(--duration-normal) var(--ease-out-expo);
+  }
+
+  .portfolio__shuffle ul li.active,
+  .portfolio__shuffle ul li:hover {
+    background: var(--color-brand);
+    color: var(--color-elevated);
+  }
+
+  .portfolio__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .portfolio__item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .portfolio__item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-out-expo),
+      scale var(--duration-slow) var(--ease-out-expo);
+  }
+
+  .portfolio__item:hover img {
+    transform: scale(1.08);
+  }
+
+  .portfolio__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-md);
+    background: var(--color-elevated);
+    transform: translateY(100%);
+    transition: transform var(--duration-normal) var(--ease-out-expo);
+  }
+
+  .portfolio__item:hover .portfolio__caption {
+    transform: translateY(0);
+  }
+
+  .portfolio__caption h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: var(--space-xs);
+  }
+
+  .portfolio__caption p {
+    font-size: var(--font-size-sm);
+    color: var(--color-brand);
+    font-weight: 600;
+  }
+
+  .portfolio__more {
+    display: block;
+    width: fit-content;
+    margin: var(--space-lg) auto 0;
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--color-brand);
+    color: var(--color-elevated);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-sm);
+    transition: background var(--duration-fast) var(--ease-out-expo),
+      transform var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .portfolio__more:hover {
+    background: var(--color-brand-dark);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 1024px) {
+    .portfolio__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .portfolio__grid {
+      grid-template-columns: 1fr;
+    }
+    .portfolio__item img {
+      height: 250px;
+    }
+  }
+</style>

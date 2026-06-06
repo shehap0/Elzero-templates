@@ -1,0 +1,41 @@
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section__heading" data-reveal>
+      <h2>About Us</h2>
+      <div class="heading-separator">
+        <span class="dot"></span>
+      </div>
+      <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+    </div>
+    <div class="about__image" data-reveal>
+      <img src="/img/about.png" alt="About Kasper Agency" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+
+  .about__image {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-lg);
+  }
+
+  .about__image img {
+    max-height: 400px;
+    width: auto;
+    position: relative;
+    margin-bottom: -120px;
+  }
+
+  @media (max-width: 768px) {
+    .about__image img {
+      max-height: 250px;
+      margin-bottom: -60px;
+    }
+  }
+</style>

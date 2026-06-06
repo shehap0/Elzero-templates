@@ -1,0 +1,178 @@
+<section class="hero" id="hero">
+  <div class="hero__overlay"></div>
+  <div class="hero__text">
+    <div class="hero__content">
+      <h1 class="hero__title">
+        <span class="hero__greeting">Hello World!</span>
+        <span class="hero__line">We Are Kasper.</span>
+        <span class="hero__highlight">We Make Art.</span>
+      </h1>
+      <p class="hero__desc">
+        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+        Curabitur aliquet quam id dui posuere blandit.
+      </p>
+    </div>
+  </div>
+  <button class="hero__arrow hero__arrow--left" aria-label="Previous">
+    <i class="fa-solid fa-angle-left"></i>
+  </button>
+  <button class="hero__arrow hero__arrow--right" aria-label="Next">
+    <i class="fa-solid fa-angle-right"></i>
+  </button>
+  <ul class="hero__bullets">
+    <li></li>
+    <li class="active"></li>
+    <li></li>
+  </ul>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    background: var(--color-ink);
+    background-image: url('/img/landing.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: oklch(0 0 0 / 0.55);
+    z-index: 1;
+  }
+
+  .hero__text {
+    position: relative;
+    z-index: 2;
+    background: var(--color-brand-translucent);
+    padding: var(--space-lg) var(--space-xl);
+    max-width: 55%;
+    margin-left: 0;
+    backdrop-filter: blur(4px);
+  }
+
+  .hero__content {
+    max-width: 650px;
+  }
+
+  .hero__title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__greeting {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: var(--tracking-wide);
+    color: oklch(1 0 0 / 0.95);
+    text-wrap: balance;
+  }
+
+  .hero__line {
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: var(--tracking-tight);
+    color: oklch(1 0 0 / 0.95);
+    line-height: var(--leading-tight);
+    text-wrap: balance;
+  }
+
+  .hero__highlight {
+    font-size: var(--font-size-6xl);
+    font-weight: 800;
+    text-transform: capitalize;
+    letter-spacing: var(--tracking-tight);
+    color: oklch(1 0 0 / 1);
+    line-height: var(--leading-tight);
+    text-wrap: balance;
+  }
+
+  .hero__desc {
+    font-size: var(--font-size-base);
+    line-height: var(--leading-loose);
+    color: oklch(1 0 0 / 0.8);
+    max-width: 550px;
+    text-wrap: pretty;
+  }
+
+  .hero__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: oklch(1 0 0 / 0.5);
+    font-size: var(--font-size-4xl);
+    padding: var(--space-sm);
+    transition: color var(--duration-fast) var(--ease-out-expo),
+      transform var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .hero__arrow:hover {
+    color: var(--color-brand);
+  }
+
+  .hero__arrow--left {
+    left: var(--space-sm);
+  }
+
+  .hero__arrow--right {
+    right: var(--space-sm);
+  }
+
+  .hero__bullets {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .hero__bullets li {
+    width: 20px;
+    height: 20px;
+    border: 2px solid oklch(1 0 0 / 0.7);
+    border-radius: 50%;
+    transition: background var(--duration-normal) var(--ease-out-expo);
+  }
+
+  .hero__bullets li.active {
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+  }
+
+  @media (max-width: 1024px) {
+    .hero__text {
+      max-width: 80%;
+      padding: var(--space-lg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero__text {
+      max-width: 100%;
+      padding: var(--space-md);
+    }
+    .hero__highlight {
+      font-size: var(--font-size-4xl);
+    }
+    .hero__line {
+      font-size: var(--font-size-3xl);
+    }
+    .hero__arrow {
+      display: none;
+    }
+  }
+</style>
