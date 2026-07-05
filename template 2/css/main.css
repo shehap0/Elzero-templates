@@ -1164,4 +1164,12 @@ header nav i:hover + ul{
   font-weight: bold;
   color: var(--main-color);
 }
+.footer .footer__credit {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.footer .footer__credit a {
+  color: var(--main-color);
+  text-decoration: none;
+}
 /* End Footer */

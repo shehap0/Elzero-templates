@@ -440,4 +440,12 @@ html{
 .footer .container span{
     color: var(--main-color);
 }
+.footer .container .footer__credit{
+    margin-top: 10px;
+    font-size: 14px;
+}
+.footer .container .footer__credit a{
+    color: var(--main-color);
+    text-decoration: none;
+}
 /* end footer */

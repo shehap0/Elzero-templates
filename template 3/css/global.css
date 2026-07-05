@@ -178,4 +178,33 @@ img{
 @media (min-width: 1400px) {
   .container { width: 1320px; }
 }
+
+/* Footer */
+.site-footer {
+  padding: 60px 0;
+  background-color: var(--secondary-bg);
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+.site-footer__colophon {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: var(--text-dim);
+}
+.site-footer__colophon strong {
+  color: var(--accent-gold);
+  font-family: var(--title-font);
+}
+.site-footer__meta {
+  line-height: 2;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+.site-footer__meta a {
+  color: var(--accent-gold);
+  transition: var(--main-transition);
+}
+.site-footer__meta a:hover {
+  color: var(--accent-hover);
+}
 /* global styles */
