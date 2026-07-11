@@ -70,6 +70,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 500;
+  white-space: nowrap;
 }
 .site-nav a::after {
   content: '';

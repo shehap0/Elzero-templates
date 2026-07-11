@@ -9,9 +9,17 @@ import InnerCircle from '~/components/InnerCircle.astro';
 import SealedCorrespondence from '~/components/SealedCorrespondence.astro';
 import GuildTrades from '~/components/GuildTrades.astro';
 import SiteFooter from '~/components/SiteFooter.astro';
+import AmbientParticles from '~/components/AmbientParticles.astro';
+import CustomCursor from '~/components/CustomCursor.astro';
+import BackgroundAudio from '~/components/BackgroundAudio.astro';
+import SectionFire from '~/components/SectionFire.astro';
 ---
 
 <BaseLayout>
+  <AmbientParticles />
+  <CustomCursor />
+  <BackgroundAudio />
+  <SectionFire />
   <SiteHeader />
   <main id="main">
     <Hero />

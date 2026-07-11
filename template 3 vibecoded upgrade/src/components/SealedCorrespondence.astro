@@ -3,6 +3,22 @@ import { letters } from '../data/letters';
 ---
 
 <section class="correspondence section" id="correspondence" aria-labelledby="correspondence-title">
+  <img
+    class="corr-pillar corr-pillar--left"
+    src="/images/left longer pillar v3.png"
+    alt=""
+    aria-hidden="true"
+    loading="lazy"
+    decoding="async"
+  />
+  <img
+    class="corr-pillar corr-pillar--right"
+    src="/images/right longer pillar v3.png"
+    alt=""
+    aria-hidden="true"
+    loading="lazy"
+    decoding="async"
+  />
   <div class="container">
     <header class="section__head">
       <div>
@@ -472,6 +488,33 @@ import { letters } from '../data/letters';
       right: -0.6rem;
       width: 1.75rem;
       height: 1.75rem;
+    }
+  }
+
+  .corr-pillar {
+    position: absolute;
+    top: -4rem;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    width: auto;
+  }
+
+  .corr-pillar--left {
+    left: -5%;
+  }
+
+  .corr-pillar--right {
+    right: -5%;
+  }
+
+  .correspondence {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  @media (max-width: 960px) {
+    .corr-pillar {
+      display: none;
     }
   }
 
