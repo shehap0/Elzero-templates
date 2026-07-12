@@ -37,8 +37,6 @@ You can review my site here:
 
 👉 [Elzero Templates 3 – Live Demo](https://shehap0.github.io/Elzero-templates/template%203/index.html)
 
-👉 [Elzero Templates 3 vibe coded upgrade – Live Demo](https://medieval-ages.vercel.app/)
-
 ---
 
 ## 📌 Notes
